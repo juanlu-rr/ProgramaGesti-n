@@ -62,7 +62,7 @@ public class ModeloModificacionHotel {
 	public void ModificacionHotel(Choice choice, TextField cadena1, TextField cadena2, TextField cadena3, Dialog dialogo, 
 			Dialog dialogo1, Dialog dialogo2) throws ClassNotFoundException, SQLException, IOException {
 		
-			String cadena= choice.getSelectedItem();
+			String cadena = choice.getSelectedItem();
 			String[] programs = cadena.split("-");
 			String program1 = programs[0];
 

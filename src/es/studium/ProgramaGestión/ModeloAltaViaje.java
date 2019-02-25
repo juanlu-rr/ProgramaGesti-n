@@ -54,21 +54,21 @@ public class ModeloAltaViaje {
 			System.out.println("Error en la sentencia SQL");
 		}
 	}
-//	public static void registrar(String origen, String destino, String fechaViaje, int idClienteFK1 ) throws IOException {
-//		Date fechaHora = new Date();
-//		SimpleDateFormat format = new SimpleDateFormat("hh:mm:ss  dd/MM/yyyy");
-//		String hourDateFormat= format.format(fechaHora);
-//
-//		FileWriter fw= new FileWriter("fichero.txt",true);
-//		BufferedWriter bw= new BufferedWriter(fw);
-//		PrintWriter salida = new PrintWriter(bw);
-//		salida.println("["+hourDateFormat+"]" + "["+origen+"]" + "["+destino+"]" + "["+fechaViaje+"]" + "["+idClienteFK1+"]");
-//		salida.close();
-//		bw.close();
-//		fw.close();
-//
-//		System.out.println("["+hourDateFormat+"]" + "["+origen+"," + destino+","+fechaViaje+","+idClienteFK1+"]");
-//	}
+	public static void registrar(String origen, String destino, String fechaViaje, String idClienteFK ) throws IOException {
+		Date fechaHora = new Date();
+		SimpleDateFormat format = new SimpleDateFormat("hh:mm:ss  dd/MM/yyyy");
+		String hourDateFormat= format.format(fechaHora);
+
+		FileWriter fw= new FileWriter("fichero.txt",true);
+		BufferedWriter bw= new BufferedWriter(fw);
+		PrintWriter salida = new PrintWriter(bw);
+		salida.println("["+hourDateFormat+"]" + "["+origen+"]" + "["+destino+"]" + "["+fechaViaje+"]" + "["+idClienteFK+"]");
+		salida.close();
+		bw.close();
+		fw.close();
+
+		System.out.println("["+hourDateFormat+"]" + "["+origen+"," + destino+","+fechaViaje+","+idClienteFK+"]");
+	}
 	
 	public Choice Mostrarchoice(Choice choice) {
 		String driver = "com.mysql.jdbc.Driver";
@@ -113,16 +113,6 @@ public class ModeloAltaViaje {
 		}
 		return choice;
 	}
-//	public void  SepararChoice(Choice choice) 
-//			throws ClassNotFoundException, SQLException {
-//		
-//			String cadena = choice.getSelectedItem();
-//			String[] programs = cadena.split("-");
-//			String id = programs[0];
-//			
-//			int idClienteFK = Integer.parseInt(id);
-//			
-//				
-//	}
+
 
 }

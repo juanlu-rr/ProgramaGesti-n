@@ -8,5 +8,6 @@ public class Inicio {
 		ModeloLogin modeloLogin = new ModeloLogin();
 		// Crear el controlador de Login
 		new ControladorLogin(modeloLogin, vistaLogin);
+		System.out.println("Programa Iniciado");
 	}
 }

@@ -29,6 +29,7 @@ public class ControladorLogin implements ActionListener, WindowListener {
 				VistaPrincipal vistaPrincipal = new VistaPrincipal();
 				ModeloPrincipal modeloPrincipal = new ModeloPrincipal();
 				new ControladorPrincipal(modeloPrincipal, vistaPrincipal);
+				System.out.println("Bienvenido a mi programa de Gestión");
 			} 
 			else 
 			{

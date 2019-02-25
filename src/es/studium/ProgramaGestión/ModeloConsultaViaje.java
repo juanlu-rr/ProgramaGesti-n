@@ -44,27 +44,31 @@ public class ModeloConsultaViaje extends Frame{
 			PdfWriter.getInstance(documento,ficheroPdf).setInitialLeading(20);
 			rs = statement.executeQuery(sentencia);
 			documento.open();
-			PdfPTable tabla = new PdfPTable(4);
+			PdfPTable tabla = new PdfPTable(5);
 			tabla.addCell(" ID del Viaje");
 			tabla.addCell(" Origen del Viaje");
 			tabla.addCell(" Destino del Viaje");
 			tabla.addCell(" Fecha del Viaje");
+			tabla.addCell(" Id del Cliente");
 			while (rs.next()) {
 				datos = Integer.toString(rs.getInt("idViaje"));
 				datos = datos + "-" + rs.getString("origen");
 				datos = datos + "-" + rs.getString("destino");
 				datos = datos + "-" + rs.getString("fechaViaje");
+				datos = datos + "-" + rs.getString("idClienteFK1");
 
 				String[] programa = datos.split("-");
 				String programa1 = programa[0];
 				String programa2 = programa[1];
 				String programa3 = programa[2];
 				String programa4 = programa[3];
+				String programa5 = programa[4];
 
 				tabla.addCell("" + programa1);
 				tabla.addCell("" + programa2);
 				tabla.addCell("" + programa3);
 				tabla.addCell("" + programa4);
+				tabla.addCell("" + programa5);
 			}
 			documento.add(tabla);
 			documento.close();

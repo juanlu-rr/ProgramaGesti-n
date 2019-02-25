@@ -15,8 +15,7 @@ public class VistaModificacionViaje extends Frame{
 	Label origen = new Label(" Origen del Viaje ");
 	Label destino = new Label(" Destino del Viaje ");
 	Label fecha = new Label(" Fecha del Viaje ");
-
-	
+	Label idCliente = new Label(" Id Cliente ");
 	Label lblConfirmacion = new Label(" Viaje modificado");
 	Label lblError = new Label(" Error al modificar Viaje");
 	
@@ -24,7 +23,6 @@ public class VistaModificacionViaje extends Frame{
 	TextField txtOrigen = new TextField(20);
 	TextField txtDestino = new TextField(20);
 	TextField txtFecha = new TextField(20);
-	
 	
 	Dialog dialogo = new Dialog(this, "Actualizar", true);
 	Dialog dialogo1 = new Dialog(this, "Actualizado", true);
@@ -36,13 +34,14 @@ public class VistaModificacionViaje extends Frame{
 	Button btnAplicar = new Button("Aplicar");
 	
 	Choice choice = new Choice();
+	Choice choiceMod = new Choice();
 	String datos = "";
 	
 	public VistaModificacionViaje() {
 		setLayout(new FlowLayout());
 		setTitle("Modificación Viaje");
 		
-		dialogo.setLayout(new GridLayout(5,2));
+		dialogo.setLayout(new GridLayout(6,2));
 		dialogo.setTitle("Modificando Viaje");
 		dialogo.setSize(400, 400);
 		dialogo.add(lblIdViaje);
@@ -53,7 +52,10 @@ public class VistaModificacionViaje extends Frame{
 		dialogo.add(txtDestino);
 		dialogo.add(fecha);
 		dialogo.add(txtFecha);
-
+		dialogo.add(idCliente);
+		dialogo.add(choiceMod);
+		choiceMod.add("Seleccionar ID Cliente");
+		
 		dialogo.add(btnAplicar);
 		dialogo.add(btnCancelar);
 		dialogo.setLocationRelativeTo(null);

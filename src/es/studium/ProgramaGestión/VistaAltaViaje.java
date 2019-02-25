@@ -17,7 +17,7 @@ public class VistaAltaViaje extends Frame{
 	Label origen = new Label(" Origen del Viaje");
 	Label destino = new Label(" Destino del Viaje");
 	Label fechaViaje = new Label(" Fecha del Viaje");
-	Label labelVacio = new Label(" ");
+	Label idClienteFK = new Label(" Id del Cliente");
 	Choice choice = new Choice();
 	TextField txtOrigen = new TextField(20);
 	TextField txtDestino = new TextField(20);
@@ -36,8 +36,8 @@ public class VistaAltaViaje extends Frame{
 		add(txtDestino);
 		add(fechaViaje);
 		add(txtFecha);
+		add(idClienteFK);
 		add(choice);
-		add(labelVacio);
 		add(btnAceptar);
 		add(btnLimpiar);
 		

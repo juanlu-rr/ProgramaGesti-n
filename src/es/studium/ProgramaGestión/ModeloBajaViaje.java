@@ -27,10 +27,11 @@ public class ModeloBajaViaje {
 			statement = connection.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
 			rs = statement.executeQuery(sentencia);
 			while(rs.next()) {
-				datos= Integer.toString(rs.getInt("idViaje"));
-				datos= datos + "-" + rs.getString("origen");
-				datos= datos + "-" + rs.getString("destino");
-				datos= datos + "-" + rs.getString("fechaViaje");
+				datos = Integer.toString(rs.getInt("idViaje"));
+				datos = datos + "-" + rs.getString("origen");
+				datos = datos + "-" + rs.getString("destino");
+				datos = datos + "-" + rs.getString("fechaViaje");
+				datos = datos + "-" + rs.getString("idClienteFK1");
 
 				choice.add(datos);
 			}

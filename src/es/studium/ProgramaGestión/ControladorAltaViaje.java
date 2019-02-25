@@ -37,12 +37,17 @@ public class ControladorAltaViaje implements ActionListener, WindowListener  {
 		else if(o.equals(vistaAV.btnAceptar)) {
 			try {
 				ModeloAltaViaje.AltaViaje(vistaAV.txtOrigen.getText(),vistaAV.txtDestino.getText(),
-						vistaAV.txtFecha.getText(), vistaAV.choice.getSelectedIndex());
+						vistaAV.txtFecha.getText(), vistaAV.choice);
 			} catch (ClassNotFoundException | SQLException | IOException e2) {
 				e2.printStackTrace();
 			}
-//			ModeloAltaViaje.registrar("INSERT INTO VIAJES VALUES" + " ("+vistaAV.txtOrigen.getText(),vistaAV.txtDestino.getText(),
-//					vistaAV.txtFecha.getText(),vistaAV.choice.getSelectedItem()+")");
+			try {
+				ModeloAltaViaje.registrar("INSERT INTO VIAJES VALUES" + " ("+vistaAV.txtOrigen.getText(),vistaAV.txtDestino.getText(),
+						vistaAV.txtFecha.getText(), vistaAV.choice.getSelectedItem()+")");
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		}
 	}
 	public void windowActivated(WindowEvent arg0) {}

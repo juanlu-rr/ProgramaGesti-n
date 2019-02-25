@@ -37,8 +37,10 @@ public class ControladorModificacionViaje implements ActionListener, WindowListe
 			try  {
 				ModeloModificacionViaje.EscribirTexto(VistaModificacionViaje.choice, VistaModificacionViaje.txtIdViaje,
 						VistaModificacionViaje.txtOrigen, VistaModificacionViaje.txtDestino, VistaModificacionViaje.txtFecha);
+				ModeloModificacionViaje.MostrarChoiceMod(VistaModificacionViaje.choiceMod);
 				VistaModificacionViaje.dialogo.setVisible(true);
 				ModeloModificacionViaje.Mostrarchoice(VistaModificacionViaje.choice);
+				
 			} catch (ClassNotFoundException | SQLException e) {
 				e.printStackTrace();
 			}
@@ -49,7 +51,7 @@ public class ControladorModificacionViaje implements ActionListener, WindowListe
 		else if(objetoPulsado.equals(VistaModificacionViaje.btnAplicar)) {
 			try  {
 				ModeloModificacionViaje.ModificacionViaje(VistaModificacionViaje.choice, VistaModificacionViaje.txtOrigen,
-						VistaModificacionViaje.txtDestino, VistaModificacionViaje.txtFecha, VistaModificacionViaje.dialogo1,
+						VistaModificacionViaje.txtDestino, VistaModificacionViaje.txtFecha, VistaModificacionViaje.choiceMod,  VistaModificacionViaje.dialogo1,
 						VistaModificacionViaje.dialogo2, VistaModificacionViaje.dialogo);
 			} catch (ClassNotFoundException | SQLException e) {
 				e.printStackTrace();
